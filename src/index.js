@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const mongoose = require("mongoose");
 const usersRoute = require("./routes/user.route");
+const addressRoute = require("./routes/address.route");
 
 // defining the Express app
 const app = express();
@@ -30,6 +31,7 @@ mongoose
 
 // endpoint to return APIs
 app.use("/api/users", usersRoute);
+app.use("/api/address", addressRoute);
 
 // start the server
 const port = process.env.PORT || 3000;
